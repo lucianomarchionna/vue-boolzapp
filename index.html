@@ -4,16 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>BoolZapp</title>
 </head>
 <body>
     <div id="root" class="container">
         <div id="part-left">
-
+            <div class="account">
+                <div id="photo-account">
+                    <img :src="'img/avatar' + myProfile.avatar + '.jpg'" alt="Immagine profilo"> <!-- v-bind -->
+                </div>
+                <div id="name-account">
+                    <p>{{ myProfile.name }}</p>
+                </div>
+                <div id="icons-account">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="notifications">
+                <div class="circle">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="column">
+                    <h5>Ricevi notifiche di nuovi messaggi</h5>
+                    <p><u>Attiva notifiche desktop</u></p>
+                </div>
+            </div>
+            <div class="all-chat">
+                <div class="search-chat">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div class="chat-bottom">
+                    <div class="signle-chat" v-for = "(contact, index) in contact">
+                        <div class="picture-contact">
+                            <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="Immagine profilo">
+                        </div>
+                        <div class="info-message">
+                            <div class="info-contact">
+                                <p id="name-contact">{{contact.name}}</p>
+                                <p id="previous-message">{{contact.messages[contact.messages.length - 1].message + " ..."}}</p>
+                            </div>
+                            <p id="date-message">{{contact.messages[contact.messages.length - 1].date}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="part-right">
-
+            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
