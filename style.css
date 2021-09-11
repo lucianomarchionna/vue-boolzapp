@@ -3,3 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body{
+    background: linear-gradient(rgb(0,150,136) 17%, rgb(218,219,212) 17%);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    height: 95%;
+    width: 82%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#part-left{
+    height: 100%;
+    width: 37%;
+    border-right: 1px solid rgb(204, 186, 186);
+}
+
+#part-right{
+    height: 100%;
+    width: 63%;
+}
