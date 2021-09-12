@@ -191,7 +191,7 @@ body{
     height: 100%;
     float: left;
 }
-
+/* superior-chat */
 .superior-chat{
     width: 100%;
     height: 8%; 
@@ -235,3 +235,45 @@ body{
     color: black;
     margin-bottom: 2px;
 }
+/* superior-chat */
+/* chat */
+.chat{
+    width: 100%;
+    height: calc(100% - 16%);
+    background-image: url(img/mine.jpg);
+    overflow-y: scroll;
+}
+/* chat */
+/* bottom-chat */
+.bottom-chat{
+    width: 100%;
+    height: 8%;
+    display: flex;
+}
+
+.emoji,
+.vocal{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(90, 90, 90);
+    cursor: pointer;
+}
+
+.write-text{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.write-text input{
+    width: 100%;
+    border: none;
+    padding: 15px;
+}
+/* bottom-chat */
+/* part-right */
