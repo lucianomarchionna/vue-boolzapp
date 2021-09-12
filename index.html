@@ -10,7 +10,7 @@
     <title>BoolZapp</title>
 </head>
 <body>
-    <div id="root" class="container">
+    <div id="root" class="container clearfix">
         <div id="part-left">
             <div class="account">
                 <div id="photo-account">
@@ -56,7 +56,23 @@
             </div>
         </div>
         <div id="part-right">
-            
+            <div class="superior-chat">
+                <div class="image-users">
+                    <img :src="'img/avatar' + contact[index].avatar + '.jpg'" alt="Immagine profilo">
+                </div>
+                <div class="info-contact column">
+                    <p id="name-contact-chat">{{contact[index].name}}</p>
+                    <p>{{"Ultimo accesso oggi alle " + contact[index].messages[contact[index].messages.length - 1].date}}</p>
+                </div>
+                <div class="icons-contact">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="chat">
+                
+            </div>    
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.clearfix{
+    content: "";
+    display: table;
+    clear: both;
+}
+
 body{
     background: linear-gradient(rgb(0,150,136) 15%, rgb(218,219,212) 15%);
     height: 100vh;
@@ -21,13 +27,15 @@ body{
     margin: auto;
     background-color: white;
 }
-
+/* part-left */
 #part-left{
     height: 100%;
     width: 37%;
     border-right: 1px solid rgb(221, 221, 221);
+    float: left;
 }
 
+/* account */
 .account{
     width: 100%;
     height: 8%;
@@ -48,6 +56,7 @@ body{
 #name-account{
     width: 70%;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #icons-account{
@@ -63,7 +72,8 @@ body{
     color: rgb(177, 177, 177);
     cursor: pointer;
 }
-
+/* account */
+/* notifications */
 .notifications{
     width: 100%;
     height: 8%;
@@ -103,7 +113,8 @@ body{
     color: rgb(111, 133, 144);
     cursor: pointer;
 }
-
+/* notifications */
+/* all-chat */
 .all-chat{
     width: 100%;
     height: calc(100% - 16%);
@@ -145,7 +156,6 @@ body{
 
 #name-contact{
     margin-top: 10px;
-    cursor: pointer;
 }
 
 #previous-message{
@@ -159,6 +169,7 @@ body{
     margin-right: 20px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 #date-message{
@@ -170,4 +181,57 @@ body{
 .chat-bottom{
     height: calc(100% - 8%);
     overflow-y: scroll;
+}
+/* all-chat */
+/* part-left */
+
+/* part-right */
+#part-right{
+    width: calc(100% - 37%);
+    height: 100%;
+    float: left;
+}
+
+.superior-chat{
+    width: 100%;
+    height: 8%; 
+    display: flex;
+}
+
+.image-users{
+    width: 7%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image-users img{
+    width: 80%;
+    border-radius: 50%;
+    margin-left: 25px;
+}
+
+.info-contact{
+    width: 78%;
+    height: 100%;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.icons-contact{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(177, 177, 177);
+    cursor: pointer;
+    font-size: 27px;
+    margin-right: 10px;
+}
+
+#name-contact-chat{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 2px;
 }
