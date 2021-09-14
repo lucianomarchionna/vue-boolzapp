@@ -40,7 +40,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-bottom">
-                    <div class="signle-chat" v-for = "(contact, index) in contact">
+                    <div class="signle-chat" v-for = "(contact, index) in contact" :class="(index == chatOpened) ? 'chatopened' : 'contact'" @click="showChat(index)">
                         <div class="picture-contact">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="Immagine profilo">
                         </div>
@@ -58,7 +58,7 @@
         <div id="part-right">
             <div class="superior-chat">
                 <div class="image-users">
-                    <img :src="'img/avatar' + contact[index].avatar + '.jpg'" alt="Immagine profilo">
+                    <img :src="'img/avatar' + contact[chatOpened].avatar + '.jpg'" alt="Immagine profilo">
                 </div>
                 <div class="info-contact column">
                     <p id="name-contact-chat">{{contact[index].name}}</p>
@@ -71,8 +71,13 @@
                 </div>
             </div>
             <div class="chat">
-
-            </div>    
+                <div class="container-chat">
+                    <div class="clearfix" v-for = "(message, index) in contact[chatOpened].messages" :class="getMessageClass(index)">
+                        <p>{{message.message}}</p><br>                   
+                        <p>{{message.date}}</p>
+                    </div>
+                </div>
+            </div>
             <div class="bottom-chat">
                 <div class="emoji">
                     <i class="far fa-smile"></i>

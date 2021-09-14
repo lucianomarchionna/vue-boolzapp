@@ -243,6 +243,43 @@ body{
     background-image: url(img/mine.jpg);
     overflow-y: scroll;
 }
+
+.container-chat{
+    width: 80%;
+    height: 80%;
+    margin: 5% auto;
+}
+
+#part-right .chat .container-chat .messagereceived{
+    background-color: white;
+    float: left;
+}
+
+#part-right .chat .container-chat .messagesent{
+    background-color: #D7F1BA;
+    float: right;
+}
+
+#part-right .chat .container-chat .messagereceived,
+#part-right .chat .container-chat .messagesent{
+    padding: 15px 20px;
+    margin: 5px;
+    border-radius: 15px;
+    min-width: 35%;
+}
+
+.chat .container-chat .clearfix p:first-child{
+    float: left;
+    display: block;
+}
+
+.chat .container-chat .clearfix p:last-child{
+    margin: 4px;
+    font-size: 10px;
+    float: right;
+    display: block;
+    color: rgb(161, 161, 161);
+}
 /* chat */
 /* bottom-chat */
 .bottom-chat{

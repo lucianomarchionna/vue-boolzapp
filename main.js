@@ -89,6 +89,17 @@ const app = new Vue({
                     }
                 ],
             },
-        ]
+        ],
+        chatOpened: 0,
+    },
+    methods: {
+        getMessageClass(index){
+            let thisChatOpened = this.contact[this.chatOpened];
+            let messageClass = "message" + thisChatOpened.messages[index].status;
+            return messageClass;
+        },
+        showChat(index){
+            this.chatOpened = index;
+        }
     }   
 })
