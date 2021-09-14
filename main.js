@@ -2,12 +2,12 @@ Vue.config.devtools = true;
 const app = new Vue({
     el: '#root',
     data: {
+        newMessage: "",
         index : 0,
         myProfile:{
             name: 'Luciano Marchionna',
             avatar: '_io'
         },
-
         contact: [
             {
                 name: 'Michele',
@@ -100,6 +100,12 @@ const app = new Vue({
         },
         showChat(index){
             this.chatOpened = index;
+        },
+        addMessage(){
+            if(this.newMessage != ""){
+                this.contact[this.index].messages.push({message: this.newMessage, status: 'sent', date: dayjs().format("DD/MM/YYYY hh:mm:ss")});
+            }
+            this.newMessage = "";
         }
     }   
 })
