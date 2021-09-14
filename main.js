@@ -103,7 +103,7 @@ const app = new Vue({
         },
         addMessage(){
             if(this.newMessage != ""){
-                this.contact[this.index].messages.push({message: this.newMessage, status: 'sent', date: dayjs().format("DD/MM/YYYY hh:mm:ss")});
+                this.contact[this.chatOpened].messages.push({message: this.newMessage, status: 'sent', date: dayjs().format("DD/MM/YYYY hh:mm:ss")});
             }
             this.newMessage = "";
         }

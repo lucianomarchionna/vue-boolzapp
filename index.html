@@ -62,8 +62,8 @@
                     <img :src="'img/avatar' + contact[chatOpened].avatar + '.jpg'" alt="Immagine profilo">
                 </div>
                 <div class="info-contact column">
-                    <p id="name-contact-chat">{{contact[index].name}}</p>
-                    <p>{{"Ultimo accesso oggi alle " + contact[index].messages[contact[index].messages.length - 1].date}}</p>
+                    <p id="name-contact-chat">{{contact[chatOpened].name}}</p>
+                    <p>{{"Ultimo accesso oggi alle " + contact[chatOpened].messages[contact[chatOpened].messages.length - 1].date}}</p>
                 </div>
                 <div class="icons-contact">
                     <i class="fas fa-search"></i>
