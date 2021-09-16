@@ -38,14 +38,14 @@
             <div class="all-chat">
                 <div class="search-chat">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchWord" @keyup="searchLetters">
                 </div>
                 <div class="chat-bottom">
                     <div class="signle-chat" v-for = "(contact, index) in contact" :class="(index == chatOpened) ? 'chatopened' : 'contact'" @click="showChat(index)">
-                        <div class="picture-contact">
+                        <div class="picture-contact" v-if="contact.visible">
                             <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="Immagine profilo">
                         </div>
-                        <div class="info-message">
+                        <div class="info-message" v-if="contact.visible">
                             <div class="info-contact">
                                 <p id="name-contact">{{contact.name}}</p>
                                 <p id="previous-message">{{contact.messages[contact.messages.length - 1].message + " ..."}}</p>

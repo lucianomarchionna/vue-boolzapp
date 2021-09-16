@@ -91,6 +91,7 @@ const app = new Vue({
             },
         ],
         chatOpened: 0,
+        searchWord: "",
     },
     methods: {
         getMessageClass(index){
@@ -118,7 +119,16 @@ const app = new Vue({
                     date: dayjs().format("DD/MM/YYYY hh:mm:ss")
                 })
             }, 1000);
+        },
+        searchLetters(){
+            let self = this;
+            this.contact.forEach((element) => {
+                if(element.name.toLowerCase().includes(self.searchWord.toLowerCase())){
+                    element.visible = true;
+                } else{
+                    element.visible = false;
+                }
+            });
         }
-
     }   
 })
